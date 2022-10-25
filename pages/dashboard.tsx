@@ -1,11 +1,13 @@
 import SearchResultsContainer from "../components/SearchResultsContainer";
+import SprintsSection from "../components/SprintsSection";
 
 function Dashboard() {
-  return (
-    <>
-      <SearchResultsContainer />
-    </>
-  );
+    return (
+        <>
+            <SprintsSection />
+            <SearchResultsContainer />
+        </>
+    );
 }
 
 export default Dashboard;
