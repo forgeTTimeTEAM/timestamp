@@ -12,7 +12,7 @@ interface IUserProviderProps {
 export const UserContext = createContext<IUserContext>({} as IUserContext);
 
 function UserProvider({ children }: IUserProviderProps) {
-  const [themeIsDark, setThemeIsDark] = useState(true);
+  const [themeIsDark, setThemeIsDark] = useState(false);
 
   const changeTheme = () => {
     setThemeIsDark(!themeIsDark);

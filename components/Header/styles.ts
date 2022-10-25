@@ -3,10 +3,11 @@ import { ITheme } from "../../styles/theme/interface";
 
 interface IHeaderProps {
   dashboard?: boolean;
-  theme: ITheme;
+  theme?: ITheme;
 }
 
 const HeaderContainer = styled.header<IHeaderProps>`
+  color: ${({ theme }) => theme.font_color_primary};
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -31,15 +32,28 @@ const HeaderContainer = styled.header<IHeaderProps>`
   }
 
   .logo {
+    color: ${({ theme }) => theme.fillHeader};
+
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
 
     h1 {
+      font-family: "Nunito";
       font-size: 2rem;
+      font-weight: bold;
       flex: 1;
 
       display: ${({ dashboard }) => (dashboard ? "none" : "initial")};
+      letter-spacing: 2px;
+      background: linear-gradient(
+        to right,
+        ${({ theme }) => theme.color_logo_left} 45%,
+        ${({ theme }) => theme.color_logo_right} 45%
+      );
+      background-clip: border-box;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
 
       @media (min-width: 480px) {
         display: initial;
@@ -47,7 +61,6 @@ const HeaderContainer = styled.header<IHeaderProps>`
     }
 
     svg {
-      width: 2rem;
       height: 2rem;
     }
   }
@@ -59,6 +72,8 @@ const HeaderContainer = styled.header<IHeaderProps>`
     gap: 15px;
 
     & > div {
+      background: ${({ theme }) => theme.bg_button};
+      color: ${({ theme }) => theme.bg_linear_2};
       display: flex;
       justify-content: flex-end;
       align-items: center;
@@ -67,7 +82,6 @@ const HeaderContainer = styled.header<IHeaderProps>`
 
       position: relative;
 
-      background-color: red;
       input {
         background-color: transparent;
 
@@ -81,6 +95,7 @@ const HeaderContainer = styled.header<IHeaderProps>`
 
         &:focus,
         &.Active {
+          outline-color: ${({ theme }) => theme.bg_linear_2};
           min-width: 170px;
           width: 20vw;
         }
