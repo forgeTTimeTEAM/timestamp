@@ -1,6 +1,7 @@
 import "styled-components";
+import { ITheme } from "./interface";
 
-export const light = {
+export const light: ITheme = {
   bg_linear_1: "#B5CAD9",
   bg_linear_2: "#C5C7C9",
   bg_input: "#232A43",
@@ -88,7 +89,7 @@ export const light = {
   },
 };
 
-export const dark = {
+export const dark: ITheme = {
   bg_linear_1: "#253250",
   bg_linear_2: "#0F1425",
   bg_input: "#1F2D61",
