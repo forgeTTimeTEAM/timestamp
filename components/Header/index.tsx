@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { useState } from "react";
 import { BiSearch, BiSun } from "react-icons/bi";
-import { CgMoon, CgPlayTrackNextR } from "react-icons/cg";
+import { CgMoon } from "react-icons/cg";
 import { useUserContext } from "../../Context";
 
+import Logo from "../../public/logo.svg";
 import { HeaderContainer } from "./styles";
 
 interface IHeaderProps {
@@ -51,7 +52,7 @@ function Header({ dashboard }: IHeaderProps) {
         <div className="elements">
           <div className="logo">
             <h1>time stamp</h1>
-            <CgPlayTrackNextR />
+            <Logo />
           </div>
           {sideElement}
         </div>
