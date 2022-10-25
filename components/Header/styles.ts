@@ -55,7 +55,7 @@ const HeaderContainer = styled.header<IHeaderProps>`
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
 
-      @media (min-width: 480px) {
+      @media (min-width: 525px) {
         display: initial;
       }
     }
@@ -93,19 +93,26 @@ const HeaderContainer = styled.header<IHeaderProps>`
         position: relative;
         z-index: 1;
 
+        transition: all 0.7s;
+
+        cursor: pointer;
+
         &:focus,
         &.Active {
+          cursor: text;
+
+          padding-right: 2.02rem;
+
           outline-color: ${({ theme }) => theme.bg_linear_2};
-          min-width: 170px;
-          width: 20vw;
+          width: 12.5rem;
         }
       }
 
       svg {
         z-index: 0;
         margin-right: 0.25rem;
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 1.3rem;
+        height: 1.3rem;
 
         position: absolute;
         right: 0;
