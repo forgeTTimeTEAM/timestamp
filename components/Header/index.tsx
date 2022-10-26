@@ -1,7 +1,10 @@
-import Image from "next/image";
 import { useState } from "react";
+
+import Image from "next/image";
+
 import { BiSearch, BiSun } from "react-icons/bi";
 import { CgMoon } from "react-icons/cg";
+
 import { useUserContext } from "../../Context";
 
 import Logo from "../../public/logo.svg";

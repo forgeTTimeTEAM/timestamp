@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
-
 import Head from "next/head";
+
 import Header from "../components/Header";
 
 const Home: NextPage = () => {
@@ -12,10 +12,6 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      {/* <div className="bg-orange-400 rounded-full hover:text-2xl active:font-semibold">
-        <p>ISSO É UM EXEMPLO DE USO DO TAILWIND</p>
-        <p>passe o mouse em cima e clique</p>
-      </div> */}
     </div>
   );
 };
