@@ -1,5 +1,7 @@
 import type { AppProps } from "next/app";
+
 import Theme from "../components/Theme";
+
 import UserProvider from "../Context/UserContext";
 
 import "../styles/globals.css";

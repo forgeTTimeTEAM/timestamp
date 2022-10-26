@@ -1,13 +1,15 @@
+import Header from "../components/Header";
 import SearchResultsContainer from "../components/SearchResultsContainer";
 import SprintsSection from "../components/SprintsSection";
 
 function Dashboard() {
-    return (
-        <>
-            <SprintsSection />
-            <SearchResultsContainer />
-        </>
-    );
+  return (
+    <>
+      <Header dashboard />
+      <SprintsSection />
+      <SearchResultsContainer />
+    </>
+  );
 }
 
 export default Dashboard;
