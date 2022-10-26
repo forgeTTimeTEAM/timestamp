@@ -1,5 +1,7 @@
 import { useState } from "react";
+
 import SprintsCard from "./SprintsCard";
+
 import { StyledSection } from "./styles";
 
 function SprintsSection() {

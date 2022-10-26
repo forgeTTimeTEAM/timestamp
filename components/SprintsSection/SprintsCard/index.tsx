@@ -1,7 +1,10 @@
-import { HiOutlineBookOpen } from "react-icons/hi";
 import { useRouter } from "next/router";
-import { IconContainer } from "../styles";
+
+import { HiOutlineBookOpen } from "react-icons/hi";
+
 import { IProps } from "./interface";
+
+import { IconContainer } from "../styles";
 import StyledSprintsCard from "./styles";
 
 function SprintsCard({ module, sprint, date }: IProps) {
