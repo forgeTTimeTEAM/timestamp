@@ -4,8 +4,8 @@ const StyledSection = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 85%;
-  margin: 1.5rem auto;
+  width: 80%;
+  margin: 1.5rem 0;
 
   ul {
     display: flex;

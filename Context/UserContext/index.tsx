@@ -1,22 +1,39 @@
-import { createContext, ReactNode, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
-interface IUserContext {
-  themeIsDark: boolean;
-  changeTheme: () => void;
-}
+import { videosArray } from "../../utils/videosArray";
 
-interface IUserProviderProps {
-  children: ReactNode;
-}
+import { IUserContext, IUserProviderProps, IVideos } from "./interface";
 
 export const UserContext = createContext<IUserContext>({} as IUserContext);
 
 function UserProvider({ children }: IUserProviderProps) {
-  const [themeIsDark, setThemeIsDark] = useState(false);
+  const [themeIsDark, setThemeIsDark] = useState(true);
+  const [videos, setVideos] = useState<IVideos[]>(videosArray);
+  const [searcheredVideos, setSearcheredVideos] = useState<IVideos[]>([]);
+  const [searchInputValue, setSearchInputValue] = useState("");
 
   const changeTheme = () => {
     setThemeIsDark(!themeIsDark);
   };
+
+  const searchVideos = () => {
+    const searcheredVideos = videos.filter(({ marks }) => {
+      const videos = marks.some(({ title }) =>
+        title
+          .toLowerCase()
+          .trim()
+          .includes(searchInputValue.toLowerCase().trim())
+      );
+
+      return videos;
+    });
+
+    setSearcheredVideos(searcheredVideos);
+  };
+
+  useEffect(() => {
+    !!searchInputValue && searchVideos();
+  }, [searchInputValue]);
 
   useEffect(() => {
     const localTheme = JSON.parse(
@@ -29,7 +46,16 @@ function UserProvider({ children }: IUserProviderProps) {
   }, []);
 
   return (
-    <UserContext.Provider value={{ themeIsDark, changeTheme }}>
+    <UserContext.Provider
+      value={{
+        themeIsDark,
+        changeTheme,
+        searchInputValue,
+        setSearchInputValue,
+        videos,
+        searcheredVideos,
+      }}
+    >
       {children}
     </UserContext.Provider>
   );

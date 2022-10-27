@@ -1,23 +1,25 @@
+import { IVideoListProps } from "../interface";
+
 import { VideoContainer } from "./styles";
 
-function VideoList({ video }: any) {
+function VideoList({ video }: IVideoListProps) {
   const { name, marks } = video;
 
   return (
-    <VideoContainer>
+    <VideoContainer role="button">
       <div className="videoThumb">
         <div></div>
       </div>
-      <ul className="videoMarksContainer">
-        <li>
+      <section className="videoMarksContainer">
+        <div>
           <h4>{name}</h4>
-          {marks.map((marker: any) => (
-            <span className="videoMarkerText">
+          {marks.map((marker) => (
+            <span key={marker.id} className="videoMarkerText">
               {marker.time_video} - {marker.title}
             </span>
           ))}
-        </li>
-      </ul>
+        </div>
+      </section>
     </VideoContainer>
   );
 }
