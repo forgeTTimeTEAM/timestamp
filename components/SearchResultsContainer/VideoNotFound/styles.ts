@@ -9,6 +9,10 @@ const FigureContainer = styled.div`
   height: 100%;
   padding: 0.5rem;
 
+  div {
+    max-width: 90%;
+  }
+
   p {
     font-family: "Inter";
     text-align: center;
@@ -24,11 +28,18 @@ const FigureContainer = styled.div`
     color: #fff;
     font-size: 0.75rem;
     font-weight: 300;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   @media (min-width: 686px) {
     flex-direction: row;
-    padding: 0.5rem 0;
+    padding: 0.5rem 0.5rem;
+
+    div {
+      max-width: 70%;
+    }
 
     p {
       font-size: 1.1rem;
