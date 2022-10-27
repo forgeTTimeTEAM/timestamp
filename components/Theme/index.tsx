@@ -1,6 +1,8 @@
 import { ReactNode } from "react";
-import { ThemeProvider } from "styled-components";
+
 import { useUserContext } from "../../Context";
+
+import { ThemeProvider } from "styled-components";
 import * as palette from "../../styles/theme";
 
 interface IThemeProps {

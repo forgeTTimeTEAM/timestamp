@@ -1,19 +1,18 @@
 import Image from "next/image";
-import { useState } from "react";
+
 import { BiSearch, BiSun } from "react-icons/bi";
 import { CgMoon } from "react-icons/cg";
+
 import { useUserContext } from "../../Context";
+
+import { IHeaderProps } from "./interface";
 
 import Logo from "../../public/logo.svg";
 import { HeaderContainer } from "./styles";
 
-interface IHeaderProps {
-  dashboard?: boolean;
-}
-
 function Header({ dashboard }: IHeaderProps) {
-  const { themeIsDark, changeTheme } = useUserContext();
-  const [search, setSearch] = useState("");
+  const { themeIsDark, changeTheme, searchInputValue, setSearchInputValue } =
+    useUserContext();
 
   const themeIcon = !themeIsDark ? (
     <CgMoon size="2rem" />
@@ -31,10 +30,10 @@ function Header({ dashboard }: IHeaderProps) {
     <div className="sideElement">
       <div>
         <input
-          className={!!search ? "Active" : ""}
+          className={!!searchInputValue ? "Active" : ""}
           type="text"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          value={searchInputValue}
+          onChange={(e) => setSearchInputValue(e.target.value)}
         />
         <BiSearch />
       </div>

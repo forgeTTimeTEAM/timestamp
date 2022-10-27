@@ -9,8 +9,6 @@ function ListDay() {
       <CardDay />
       <CardDay />
       <CardDay />
-      <CardDay />
-      <CardDay />
     </List>
   )
 }

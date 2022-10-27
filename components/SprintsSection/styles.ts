@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const StyledSection = styled.section`
+<<<<<<< HEAD
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,13 +11,20 @@ const StyledSection = styled.section`
     max-width: 1200px;
     width: 100%;
 
+=======
+    width: 80%;
+    margin: 1.5rem 0;
+
+>>>>>>> origin/develop
     ul {
         display: flex;
-        align-items: center;
         flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
         gap: 2.2rem;
 
         @media screen and (max-width: 1024px) {
+            justify-content: flex-start;
             flex-wrap: nowrap;
             overflow-x: auto;
             padding: 1rem;

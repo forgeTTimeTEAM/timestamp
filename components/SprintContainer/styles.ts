@@ -11,7 +11,7 @@ export const ContainerMain = styled.div`
     width: 100%;
     flex-direction: row;
     justify-content: flex-start;
-    padding: 15px 2%;
+    padding: 10px 2%;
     font-size: 1.75rem;
     font-weight: 700;
     background-color: #D3E0F0;
@@ -23,4 +23,6 @@ export const ContainerMain = styled.div`
 export const ContainerContent = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
+  max-height: 510px;
 `

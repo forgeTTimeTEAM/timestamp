@@ -1,12 +1,8 @@
 import styled from "styled-components";
-import { ITheme } from "../../styles/theme/interface";
 
-interface IHeaderProps {
-  dashboard?: boolean;
-  theme?: ITheme;
-}
+import { IStyledHeaderProps } from "./interface";
 
-const HeaderContainer = styled.header<IHeaderProps>`
+const HeaderContainer = styled.header<IStyledHeaderProps>`
   color: ${({ theme }) => theme.font_color_primary};
   margin: 0 auto;
   display: flex;
@@ -99,11 +95,12 @@ const HeaderContainer = styled.header<IHeaderProps>`
 
         &:focus,
         &.Active {
+          font-family: "Inter";
           cursor: text;
 
           padding-right: 2.02rem;
 
-          outline-color: ${({ theme }) => theme.bg_linear_2};
+          outline-color: ${({ theme }) => theme.bg_linear_1};
           width: 12.5rem;
         }
       }

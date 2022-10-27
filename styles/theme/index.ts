@@ -1,4 +1,5 @@
 import "styled-components";
+
 import { ITheme } from "./interface";
 
 export const light: ITheme = {
