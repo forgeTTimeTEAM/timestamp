@@ -13,7 +13,7 @@ function SprintsCard({ module, sprint, date }: ISprintCardProps) {
   return (
     <StyledSprintsCard
       role="button"
-      onClick={() => router.push(`dashboard/sprint/${sprint}`)}
+      onClick={() => router.push(`sprint/${sprint}`)}
     >
       <h2>
         {module} - Sprint {sprint}

@@ -10,16 +10,16 @@ const StyledSprintsCard = styled.li`
   padding: 0.9rem;
 
   background-color: #0f2d51;
-  border-left: 3px solid #d3e0f0;
+  border-left: 5px solid #d3e0f0;
   box-shadow: 1px 1px 20px 2px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 
   cursor: pointer;
 
-  transition: .3s;
+  transition: 0.3s;
 
   :hover {
-    border-left: 3px solid #190919;
+    border-left: 5px solid #407bff;
   }
 
   h2 {
