@@ -1,6 +1,5 @@
 import VideoList from "./VideoList";
-
-import VideoNotFound from "../VideoNotFound";
+import VideoNotFound from "./VideoNotFound";
 
 import { useUserContext } from "../../Context";
 
@@ -10,15 +9,6 @@ function SearchResultsContainer() {
   const { searchInputValue, searcheredVideos, videos } = useUserContext();
 
   const videoListRender = () => {
-    if (searchInputValue && searcheredVideos.length !== 0) {
-      return (
-        <ul className="videosList">
-          {searcheredVideos.map((video) => (
-            <VideoList key={video.id} video={video} />
-          ))}
-        </ul>
-      );
-    }
     if (!searchInputValue) {
       return (
         <ul className="videosList">
@@ -27,21 +17,22 @@ function SearchResultsContainer() {
           ))}
         </ul>
       );
-    }
-    return null;
-  };
-
-  const videoNotFoundRender = () => {
-    if (searcheredVideos.length === 0 && searchInputValue) {
+    } else if (!!searchInputValue && searcheredVideos.length !== 0) {
+      return (
+        <ul className="videosList">
+          {searcheredVideos.map((video) => (
+            <VideoList key={video.id} video={video} />
+          ))}
+        </ul>
+      );
+    } else {
       return <VideoNotFound searchInputValue={searchInputValue} />;
     }
-    return null;
   };
 
   return (
     <VideoSearchContainer searcheredVideosLength={searcheredVideos.length}>
       {videoListRender()}
-      {videoNotFoundRender()}
     </VideoSearchContainer>
   );
 }

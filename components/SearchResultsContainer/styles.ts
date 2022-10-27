@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-import { IJustifyContentProps } from "./interface";
+import { IStyledVideoListProps } from "./interface";
 
-const VideoSearchContainer = styled.section<IJustifyContentProps>`
+const VideoSearchContainer = styled.section<IStyledVideoListProps>`
   display: flex;
   align-items: center;
   justify-content: ${({ searcheredVideosLength }) =>
