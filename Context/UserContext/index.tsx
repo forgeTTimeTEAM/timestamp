@@ -17,15 +17,21 @@ function UserProvider({ children }: IUserProviderProps) {
   };
 
   const searchVideos = () => {
-    const searcheredVideos = videos.filter(({ marks }) => {
-      const videos = marks.some(({ title }) =>
+    const searcheredVideos = videos.filter(({ name, marks }) => {
+      const videoMarks = marks.some(({ title }) =>
         title
           .toLowerCase()
           .trim()
           .includes(searchInputValue.toLowerCase().trim())
       );
 
-      return videos;
+      return (
+        videoMarks ||
+        name
+          .toLowerCase()
+          .trim()
+          .includes(searchInputValue.toLowerCase().trim())
+      );
     });
 
     setSearcheredVideos(searcheredVideos);
