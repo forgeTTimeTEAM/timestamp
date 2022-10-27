@@ -16,6 +16,8 @@ const StyledSprintsCard = styled.li`
 
   cursor: pointer;
 
+  transition: .3s;
+
   :hover {
     border-left: 3px solid #190919;
   }
