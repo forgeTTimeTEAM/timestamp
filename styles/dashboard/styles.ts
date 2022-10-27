@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Container = styled.div`
+const DashboardContainer = styled.div`
   background: linear-gradient(
     ${(props) => props.theme.dashboard.deg},
     ${(props) => props.theme.dashboard.linear2},
@@ -11,7 +11,7 @@ const Container = styled.div`
   min-height: 100vh;
 `;
 
-const Main = styled.main`
+const MainContainer = styled.main`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,4 +19,4 @@ const Main = styled.main`
   width: 100%;
 `;
 
-export { Container, Main };
+export { DashboardContainer, MainContainer };

@@ -1,4 +1,4 @@
-export interface IProps {
+export interface ISprintCardProps {
   module: string;
   sprint: number;
   date: string;

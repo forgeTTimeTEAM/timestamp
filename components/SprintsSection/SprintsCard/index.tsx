@@ -2,18 +2,18 @@ import { useRouter } from "next/router";
 
 import { HiOutlineBookOpen } from "react-icons/hi";
 
-import { IProps } from "./interface";
+import { ISprintCardProps } from "../interface";
 
 import { IconContainer } from "../styles";
 import StyledSprintsCard from "./styles";
 
-function SprintsCard({ module, sprint, date }: IProps) {
+function SprintsCard({ module, sprint, date }: ISprintCardProps) {
   const router = useRouter();
 
   return (
     <StyledSprintsCard
       role="button"
-      onClick={() => router.push(`/sprint/${sprint}`)}
+      onClick={() => router.push(`dashboard/sprint/${sprint}`)}
     >
       <h2>
         {module} - Sprint {sprint}

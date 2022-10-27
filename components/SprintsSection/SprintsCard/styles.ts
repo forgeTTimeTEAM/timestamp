@@ -16,6 +16,10 @@ const StyledSprintsCard = styled.li`
 
   cursor: pointer;
 
+  :hover {
+    border-left: 3px solid #190919;
+  }
+
   h2 {
     font-family: Poppins;
     font-weight: 700;

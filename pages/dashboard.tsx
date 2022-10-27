@@ -2,17 +2,17 @@ import Header from "../components/Header";
 import SearchResultsContainer from "../components/SearchResultsContainer";
 import SprintsSection from "../components/SprintsSection";
 
-import { Container, Main } from "../styles/dashboard/styles";
+import { DashboardContainer, MainContainer } from "../styles/dashboard/styles";
 
 function Dashboard() {
   return (
-    <Container>
+    <DashboardContainer>
       <Header dashboard />
-      <Main>
+      <MainContainer>
         <SprintsSection />
         <SearchResultsContainer />
-      </Main>
-    </Container>
+      </MainContainer>
+    </DashboardContainer>
   );
 }
 
