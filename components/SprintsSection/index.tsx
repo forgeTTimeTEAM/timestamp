@@ -3,7 +3,7 @@ import SprintsCard from "../SprintsCard";
 import { StyledSection } from "./styles";
 
 function SprintsSection() {
-    const [card, setCard] = useState([
+    const cards = [
         { module: "M3", date: "05/07/22", sprint: 1 },
         { module: "M3", date: "12/07/22", sprint: 2 },
         { module: "M3", date: "21/07/22", sprint: 3 },
@@ -12,12 +12,12 @@ function SprintsSection() {
         { module: "M3", date: "12/08/22", sprint: 6 },
         { module: "M3", date: "19/08/22", sprint: 7 },
         { module: "M3", date: "28/08/22", sprint: 8 },
-    ]);
+    ]
 
     return (
         <StyledSection>
             <ul>
-                {card.map((sprint, index) => (
+                {cards.map((sprint, index) => (
                     <SprintsCard
                         key={index}
                         module={sprint.module}

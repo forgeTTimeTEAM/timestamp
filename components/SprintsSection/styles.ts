@@ -5,9 +5,10 @@ const StyledSection = styled.section`
     align-items: center;
     justify-content: center;
 
-    margin: 1.5rem 0;
+    margin: 1.5rem auto;
 
-    width: 85%;
+    max-width: 1200px;
+    width: 100%;
 
     ul {
         display: flex;

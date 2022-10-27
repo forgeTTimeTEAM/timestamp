@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const StyledSprintsCard = styled.li`
+    width: calc((100% / 4) - 1.67rem);
     display: flex;
     justify-content: center;
     flex-direction: column;
