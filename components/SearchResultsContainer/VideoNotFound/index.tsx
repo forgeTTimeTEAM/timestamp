@@ -13,7 +13,7 @@ function VideoNotFound({ searchInputValue }: IVideoNotFoundProps) {
       </div>
 
       <Image
-        src="/videoNotFound.svg"
+        src="/videoNotFoundAnimated.svg"
         alt="Vídeo não encontrado"
         width="320px"
         height="260px"
