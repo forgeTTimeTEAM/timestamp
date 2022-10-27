@@ -1,5 +1,6 @@
 import ListDay from "./ListDay";
 import { ContainerContent, ContainerMain } from "./styles";
+import VideoMarksContainer from "./VideoMarksContainer";
 
 function SprintContainer() {
   return (
@@ -10,6 +11,7 @@ function SprintContainer() {
       
       <ContainerContent>
         <ListDay />
+        <VideoMarksContainer />
       </ContainerContent>
       
     </ContainerMain>
