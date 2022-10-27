@@ -4,6 +4,10 @@ export interface IVideoListProps {
   video: IVideos;
 }
 
-export interface IJustifyContentProps {
+export interface IVideoNotFoundProps {
+  searchInputValue: string;
+}
+
+export interface IStyledVideoListProps {
   searcheredVideosLength: number;
 }

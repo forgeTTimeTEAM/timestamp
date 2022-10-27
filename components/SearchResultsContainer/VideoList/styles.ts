@@ -9,16 +9,21 @@ const VideoContainer = styled.li`
   cursor: pointer;
   border: 2px solid transparent;
   :hover {
-    transition: 400ms;
+    transition: 500ms;
     border: 2px ridge #d3e0f0;
     border-radius: 8px;
 
+    .videoThumb {
+      transition: 1.5s;
+      background-color: #d3e0f0;
+    }
+
     & > div > div {
+      transition: 0.8s;
       border-left: 3rem solid #232a43;
       -moz-transform: scale(1.2);
       -webkit-transform: scale(1.2);
       transform: scale(1.2);
-      transition: 1.2s;
     }
   }
 

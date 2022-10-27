@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { IVideoNotFoundProps } from "./interface";
+import { IVideoNotFoundProps } from "../interface";
 
 import { FigureContainer } from "./styles";
 
