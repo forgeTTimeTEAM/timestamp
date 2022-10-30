@@ -10,19 +10,27 @@ const StyledForm = styled.form<IStyledFormProps>`
   flex-direction: column;
   gap: 20px;
 
-  .seeButton {
-    svg {
-      width: 100%;
-      height: 100%;
+  & > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .seeButton {
+      svg {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 
   & > button {
     background-color: ${({ theme }) => theme.fill};
-    color: ${({ theme }) => theme.font_color_second};
+    color: ${({ theme }) => theme.form.font_submit};
 
     padding: 15px 50px;
     border-radius: 3.125rem;
+
+    font-weight: 800;
   }
 `;
 

@@ -13,6 +13,11 @@ export const light: ITheme = {
   fillHeader: "#222",
   transparent_gray: "rgba( 0 , 0 , 0  , 0.25) ",
 
+  form: {
+    bg_input: "#203D80",
+    font_submit: "#212529",
+  },
+
   dashboard: {
     deg: "225deg",
     linear1: "#fff",
@@ -45,6 +50,11 @@ export const dark: ITheme = {
   fill: "#2B3D64",
   fillHeader: "#fff",
   transparent_gray: "rgba( 0 , 0 , 0  , 0.25) ",
+
+  form: {
+    bg_input: "#1F2D61",
+    font_submit: "#c5c7c9",
+  },
 
   dashboard: {
     deg: "145deg",

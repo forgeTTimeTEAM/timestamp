@@ -10,7 +10,7 @@ interface IStyledContainer {
 }
 
 const StyledContainer = styled.div<IStyledContainer>`
-  color: ${(props) => props.theme.font_color_second};
+  color: #c5c7c9;
 
   height: calc(
     1rem + 32px
@@ -29,6 +29,8 @@ const StyledContainer = styled.div<IStyledContainer>`
     height: calc(1rem + 32px ${({ hasLabel }) => hasLabel && " + 1rem + 3px"});
 
     label {
+      font-weight: 600;
+
       position: absolute;
       z-index: 2;
 
@@ -37,7 +39,7 @@ const StyledContainer = styled.div<IStyledContainer>`
       ${({ theme, active }) =>
         active
           ? css`
-              color: ${theme.bg_input};
+              color: ${theme.form.bg_input};
               transform: translate(0, calc(-1rem - 33px));
             `
           : css`
@@ -45,7 +47,7 @@ const StyledContainer = styled.div<IStyledContainer>`
             `}
 
       &:has(+ div > input:focus) {
-        color: ${(props) => props.theme.bg_input};
+        color: ${({ theme }) => theme.form.bg_input};
         transform: translate(0, calc(-1rem - 33px));
       }
     }
@@ -53,7 +55,7 @@ const StyledContainer = styled.div<IStyledContainer>`
     & > div {
       width: 100%;
 
-      background-color: ${({ theme }) => theme.bg_input};
+      background-color: ${({ theme }) => theme.form.bg_input};
       border-radius: 0.625rem;
 
       display: flex;
@@ -81,11 +83,11 @@ const StyledContainer = styled.div<IStyledContainer>`
         }
 
         &:-webkit-autofill {
+          -webkit-text-fill-color: #c5c7c9;
+          color: #c5c7c9;
           ${({ theme }) => css`
-            -webkit-text-fill-color: ${theme.font_color_second};
-            color: ${theme.font_color_second};
+            -webkit-box-shadow: 0 0 0 30px ${theme.form.bg_input} inset !important;
           `};
-          -webkit-background-clip: text;
         }
       }
     }
