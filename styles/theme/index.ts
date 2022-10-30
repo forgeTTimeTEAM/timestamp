@@ -12,9 +12,11 @@ export const light: ITheme = {
   fill: "#407BFF",
   fillHeader: "#222",
   transparent_gray: "rgba( 0 , 0 , 0  , 0.25) ",
+  error: "#D00000",
 
   form: {
-    bg_input: "rgb(35, 42, 67)",
+    bg_input: "#203D80",
+    container: "#adbcde",
   },
 
   dashboard: {
@@ -49,9 +51,11 @@ export const dark: ITheme = {
   fill: "#2B3D64",
   fillHeader: "#fff",
   transparent_gray: "rgba( 0 , 0 , 0  , 0.25) ",
+  error: "#ff6961",
 
   form: {
     bg_input: "rgb(31, 45, 97)",
+    container: "#0e1a36",
   },
 
   dashboard: {

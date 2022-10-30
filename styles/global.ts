@@ -1,6 +1,11 @@
 import { createGlobalStyle } from "styled-components";
+import { ITheme } from "./theme/interface";
 
-export default createGlobalStyle`
+interface IGlobalProps {
+  theme: ITheme;
+}
+
+export default createGlobalStyle<IGlobalProps>`
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -49,5 +54,14 @@ table {
 }
 button {
     cursor: pointer;
+}
+
+body {
+    background: linear-gradient(
+    ${({ theme }) => theme.dashboard.deg},
+    ${({ theme }) => theme.dashboard.linear3},
+    ${({ theme }) => theme.dashboard.linear2},
+    ${({ theme }) => theme.dashboard.linear1}
+  );
 }
 `;

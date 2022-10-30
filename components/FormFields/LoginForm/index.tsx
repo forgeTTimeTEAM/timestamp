@@ -39,7 +39,7 @@ function LoginForm() {
             </button>
           </InputField>
         </div>
-        <button type="submit">Enviar</button>
+        <button type="submit">Entrar</button>
       </StyledForm>
     </FormProvider>
   );

@@ -10,7 +10,7 @@ interface IStyledContainer {
 }
 
 const StyledContainer = styled.div<IStyledContainer>`
-  height: calc(
+  min-height: calc(
     1rem + 32px
       ${({ hasLabel, hasError }) => {
         let height = hasLabel ? " + 1rem + 3px" : "";
@@ -24,7 +24,9 @@ const StyledContainer = styled.div<IStyledContainer>`
     position: relative;
     align-items: flex-end;
 
-    height: calc(1rem + 32px ${({ hasLabel }) => hasLabel && " + 1rem + 3px"});
+    min-height: calc(
+      1rem + 32px ${({ hasLabel }) => hasLabel && " + 1rem + 3px"}
+    );
 
     label {
       font-weight: 600;
@@ -71,6 +73,7 @@ const StyledContainer = styled.div<IStyledContainer>`
         background-color: transparent;
 
         font-size: 1rem;
+        font-family: "Inter";
 
         & + * {
           position: absolute;
@@ -92,7 +95,8 @@ const StyledContainer = styled.div<IStyledContainer>`
   }
 
   .errorContainer {
-    color: red;
+    color: ${({ theme }) => theme.error};
+    padding-left: 6px;
   }
 `;
 

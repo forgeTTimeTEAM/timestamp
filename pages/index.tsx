@@ -3,6 +3,7 @@ import Head from "next/head";
 import LoginForm from "../components/FormFields/LoginForm";
 
 import Header from "../components/Header";
+import Intro from "../public/intro.svg";
 import { StyledLoginPage } from "../styles/loginPage";
 
 const Home: NextPage = () => {
@@ -14,10 +15,15 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main>
-        <h3>Seja bem vindo(a)!</h3>
-        <LoginForm />
-      </main>
+      <section>
+        <main>
+          <h3>Seja bem vindo(a)!</h3>
+          <LoginForm />
+        </main>
+        <aside>
+          <Intro />
+        </aside>
+      </section>
     </StyledLoginPage>
   );
 };
