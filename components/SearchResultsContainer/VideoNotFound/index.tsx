@@ -11,9 +11,8 @@ function VideoNotFound({ searchInputValue }: IVideoNotFoundProps) {
         <p>Infelizmente nenhum vídeo foi encontrado :(</p>
         <p>Exibindo resultados para: {searchInputValue} </p>
       </div>
-
       <Image
-        src="/videoNotFound.svg"
+        src="/videoNotFoundAnimated.svg"
         alt="Vídeo não encontrado"
         width="320px"
         height="260px"

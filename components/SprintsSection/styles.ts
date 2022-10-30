@@ -1,19 +1,18 @@
 import styled from "styled-components";
 
 const StyledSection = styled.section`
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 80%;
   margin: 1.5rem 0;
 
   ul {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     gap: 2.2rem;
 
     @media screen and (max-width: 1024px) {
+      justify-content: flex-start;
       flex-wrap: nowrap;
       overflow-x: auto;
       padding: 1rem;
@@ -34,7 +33,7 @@ const StyledSection = styled.section`
 const IconContainer = styled.div`
   display: flex;
   justify-content: flex-end;
-  color: #d3e0f0;
+  color: ${({ theme }) => theme.searchVideosContainer.linear_2};
 `;
 
 export { StyledSection, IconContainer };

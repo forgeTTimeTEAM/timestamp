@@ -7,7 +7,7 @@ import { IUserContext, IUserProviderProps, IVideos } from "./interface";
 export const UserContext = createContext<IUserContext>({} as IUserContext);
 
 function UserProvider({ children }: IUserProviderProps) {
-  const [themeIsDark, setThemeIsDark] = useState(true);
+  const [themeIsDark, setThemeIsDark] = useState(false);
   const [videos, setVideos] = useState<IVideos[]>(videosArray);
   const [searcheredVideos, setSearcheredVideos] = useState<IVideos[]>([]);
   const [searchInputValue, setSearchInputValue] = useState("");
@@ -17,15 +17,21 @@ function UserProvider({ children }: IUserProviderProps) {
   };
 
   const searchVideos = () => {
-    const searcheredVideos = videos.filter(({ marks }) => {
-      const videos = marks.some(({ title }) =>
+    const searcheredVideos = videos.filter(({ name, marks }) => {
+      const videoMarks = marks.some(({ title }) =>
         title
           .toLowerCase()
           .trim()
           .includes(searchInputValue.toLowerCase().trim())
       );
 
-      return videos;
+      return (
+        videoMarks ||
+        name
+          .toLowerCase()
+          .trim()
+          .includes(searchInputValue.toLowerCase().trim())
+      );
     });
 
     setSearcheredVideos(searcheredVideos);
