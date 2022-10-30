@@ -10,7 +10,10 @@ function VideoMarksContainer() {
       <AsideMarcks>
         <h1>Marcadores</h1>
         <ul>
-          <li></li>
+          <li>
+            <p>09:12</p>
+            <span>UseEffect</span>
+          </li>
         </ul>
       </AsideMarcks>
 

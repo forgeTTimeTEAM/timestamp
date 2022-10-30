@@ -12,21 +12,35 @@ const LiCard = styled.li`
   font-size: 22px;
   cursor: pointer;
 
+  svg {
+    transition: 0.3s;
+  }
+
+  svg.open {
+    transform: rotate(90deg);
+  }
+
   p {
     margin-left: 10px;
   }
 `;
 
-const DivDetails = styled.div`
+const DetailsUl = styled.ul`
   display: flex;
   margin: 0;
+  cursor: pointer;
+  flex-direction: column;
 
-  p {
+  li {
     text-align: center;
     width: 100%;
     font-size: 20px;
     color: white;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `
 
-export {LiCard, DivDetails};
+export { LiCard, DetailsUl };
