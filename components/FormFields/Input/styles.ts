@@ -78,11 +78,6 @@ const StyledContainer = styled.div<IStyledContainer>`
 
           width: 1.3rem;
           height: 1.3rem;
-
-          & > * {
-            width: 100%;
-            height: 100%;
-          }
         }
 
         &:-webkit-autofill {

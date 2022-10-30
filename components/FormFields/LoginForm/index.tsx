@@ -6,6 +6,7 @@ import { BiLowVision, BiShowAlt } from "react-icons/bi";
 
 import InputField from "../Input";
 import { loginSchema } from "../validators";
+import { StyledForm } from "./styles";
 
 export interface ILoginFields {
   email: string;
@@ -22,21 +23,24 @@ function LoginForm() {
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmit((data) => console.log(data))}>
-        <InputField name="email" label="Email" />
-        <InputField name="password" label="Senha" type={passwordType}>
-          <button
-            type="button"
-            onClick={() => {
-              setSeePass(!seePass);
-              setFocus("password");
-            }}
-          >
-            {passwordIcon}
-          </button>
-        </InputField>
+      <StyledForm onSubmit={handleSubmit((data) => console.log(data))}>
+        <div>
+          <InputField name="email" label="Email" />
+          <InputField name="password" label="Senha" type={passwordType}>
+            <button
+              className="seeButton"
+              type="button"
+              onClick={() => {
+                setSeePass(!seePass);
+                setFocus("password");
+              }}
+            >
+              {passwordIcon}
+            </button>
+          </InputField>
+        </div>
         <button type="submit">Enviar</button>
-      </form>
+      </StyledForm>
     </FormProvider>
   );
 }
