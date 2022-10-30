@@ -16,7 +16,7 @@ const FigureContainer = styled.div`
   p {
     font-family: "Inter";
     text-align: center;
-    color: #d3e0f0;
+    color: ${({ theme }) => theme.searchVideosContainer.linear_2};
     font-size: 1rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
@@ -25,7 +25,7 @@ const FigureContainer = styled.div`
   p ~ p {
     font-family: "Poppins";
     text-align: center;
-    color: #fff;
+    color: ${({ theme }) => theme.fillHeader};
     font-size: 0.75rem;
     font-weight: 300;
     white-space: nowrap;
