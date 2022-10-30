@@ -14,8 +14,7 @@ export const light: ITheme = {
   transparent_gray: "rgba( 0 , 0 , 0  , 0.25) ",
 
   form: {
-    bg_input: "#203D80",
-    font_submit: "#212529",
+    bg_input: "rgb(35, 42, 67)",
   },
 
   dashboard: {
@@ -52,8 +51,7 @@ export const dark: ITheme = {
   transparent_gray: "rgba( 0 , 0 , 0  , 0.25) ",
 
   form: {
-    bg_input: "#1F2D61",
-    font_submit: "#c5c7c9",
+    bg_input: "rgb(31, 45, 97)",
   },
 
   dashboard: {

@@ -14,6 +14,7 @@ function UserProvider({ children }: IUserProviderProps) {
 
   const changeTheme = () => {
     setThemeIsDark(!themeIsDark);
+    localStorage.setItem("@timestamp:themeDark", `${!themeIsDark}`);
   };
 
   const searchVideos = () => {

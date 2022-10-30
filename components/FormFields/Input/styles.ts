@@ -10,8 +10,6 @@ interface IStyledContainer {
 }
 
 const StyledContainer = styled.div<IStyledContainer>`
-  color: #c5c7c9;
-
   height: calc(
     1rem + 32px
       ${({ hasLabel, hasError }) => {

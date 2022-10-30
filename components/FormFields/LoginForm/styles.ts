@@ -8,9 +8,11 @@ interface IStyledFormProps {
 const StyledForm = styled.form<IStyledFormProps>`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
 
   & > div {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -24,12 +26,11 @@ const StyledForm = styled.form<IStyledFormProps>`
   }
 
   & > button {
-    background-color: ${({ theme }) => theme.fill};
-    color: ${({ theme }) => theme.form.font_submit};
-
+    background-color: ${({ theme }) => theme.form.bg_input};
     padding: 15px 50px;
     border-radius: 3.125rem;
 
+    font-size: 1.125rem;
     font-weight: 800;
   }
 `;
