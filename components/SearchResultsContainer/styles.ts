@@ -7,12 +7,13 @@ const VideoSearchContainer = styled.section<IStyledVideoListProps>`
   align-items: center;
   justify-content: ${({ searcheredVideosLength }) =>
     searcheredVideosLength === 0 ? "center" : "start"};
-  width: 85%;
+  width: 80%;
   height: 16rem;
   margin: 2.5rem 0;
   border-radius: 4px;
-  border-left: 10px groove #345995;
-  box-shadow: 1px 1px 15px 3px rgba(0, 0, 0, 0.11);
+  border-left: 10px groove
+    ${({ theme }) => theme.searchVideosContainer.border_left};
+  box-shadow: 15px 5px 15px 15px ${({ theme }) => theme.transparent_gray};
 
   .videosList {
     display: flex;
@@ -35,7 +36,11 @@ const VideoSearchContainer = styled.section<IStyledVideoListProps>`
     ::-webkit-scrollbar-thumb {
       border-radius: 0 16px 16px 0;
 
-      background-image: linear-gradient(to right, #0f2d51, #d3e0f0);
+      background-image: linear-gradient(
+        to right,
+        ${({ theme }) => theme.searchVideosContainer.linear_1},
+        ${({ theme }) => theme.searchVideosContainer.linear_2}
+      );
       background-size: 300% 100%;
     }
   }

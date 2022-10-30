@@ -33,7 +33,7 @@ const StyledSection = styled.section`
 const IconContainer = styled.div`
   display: flex;
   justify-content: flex-end;
-  color: #d3e0f0;
+  color: ${({ theme }) => theme.searchVideosContainer.linear_2};
 `;
 
 export { StyledSection, IconContainer };

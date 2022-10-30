@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 const DashboardContainer = styled.div`
   background: linear-gradient(
-    ${(props) => props.theme.dashboard.deg},
-    ${(props) => props.theme.dashboard.linear2},
-    ${(props) => props.theme.dashboard.linear1},
-    ${(props) => props.theme.dashboard.linear2}
+    ${({ theme }) => theme.dashboard.deg},
+    ${({ theme }) => theme.dashboard.linear3},
+    ${({ theme }) => theme.dashboard.linear2},
+    ${({ theme }) => theme.dashboard.linear1}
   );
 
   min-height: 100vh;
