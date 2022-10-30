@@ -1,5 +1,6 @@
-import { List } from "./styles";
 import CardDay from "../CardDay";
+
+import { List } from "./styles";
 
 function ListDay() {
   return (

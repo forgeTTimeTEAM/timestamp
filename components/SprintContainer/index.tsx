@@ -1,6 +1,8 @@
 import ListDay from "./ListDay";
-import { ContainerContent, ContainerMain } from "./styles";
+
 import VideoMarksContainer from "./VideoMarksContainer";
+
+import { ContainerContent, ContainerMain } from "./styles";
 
 function SprintContainer() {
   return (

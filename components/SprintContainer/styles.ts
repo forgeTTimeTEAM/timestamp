@@ -26,5 +26,5 @@ export const ContainerContent = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 510px;
+  min-height: 510px;
 `
