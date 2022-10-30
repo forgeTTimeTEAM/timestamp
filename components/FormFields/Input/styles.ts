@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from "styled-components";
+import styled, { css } from "styled-components";
 import { ITheme } from "../../../styles/theme/interface";
 
 interface IStyledContainer {
@@ -8,15 +8,6 @@ interface IStyledContainer {
   hasLabel: boolean;
   hasError: boolean;
 }
-
-const move = keyframes`
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-`;
 
 const StyledContainer = styled.div<IStyledContainer>`
   color: ${(props) => props.theme.font_color_second};
@@ -86,6 +77,12 @@ const StyledContainer = styled.div<IStyledContainer>`
           right: 15px;
 
           width: 1.3rem;
+          height: 1.3rem;
+
+          & > * {
+            width: 100%;
+            height: 100%;
+          }
         }
 
         &:-webkit-autofill {
