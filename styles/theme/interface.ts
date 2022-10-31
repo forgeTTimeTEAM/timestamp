@@ -9,6 +9,10 @@ export interface ITheme {
   fillHeader: string;
   transparent_gray: string;
 
+  form: {
+    bg_input: string;
+  };
+
   dashboard: {
     deg: string;
     linear1: string;

@@ -7,13 +7,14 @@ import { IUserContext, IUserProviderProps, IVideos } from "./interface";
 export const UserContext = createContext<IUserContext>({} as IUserContext);
 
 function UserProvider({ children }: IUserProviderProps) {
-  const [themeIsDark, setThemeIsDark] = useState(false);
+  const [themeIsDark, setThemeIsDark] = useState(true);
   const [videos, setVideos] = useState<IVideos[]>(videosArray);
   const [searcheredVideos, setSearcheredVideos] = useState<IVideos[]>([]);
   const [searchInputValue, setSearchInputValue] = useState("");
 
   const changeTheme = () => {
     setThemeIsDark(!themeIsDark);
+    localStorage.setItem("@timestamp:themeDark", `${!themeIsDark}`);
   };
 
   const searchVideos = () => {
