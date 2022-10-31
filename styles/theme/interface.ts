@@ -8,9 +8,11 @@ export interface ITheme {
   fill: string;
   fillHeader: string;
   transparent_gray: string;
+  error: string;
 
   form: {
     bg_input: string;
+    container: string;
   };
 
   dashboard: {
