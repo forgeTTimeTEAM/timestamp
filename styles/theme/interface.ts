@@ -13,6 +13,7 @@ export interface ITheme {
   form: {
     bg_input: string;
     container: string;
+    input_label_color: string;
   };
 
   dashboard: {

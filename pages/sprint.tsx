@@ -7,10 +7,10 @@ function Sprint() {
   return (
     <>
       <Header dashboard />
-      <>
+      <MainContainer>
         <SprintContainer />
         <SearchResultsContainer />
-      </>
+      </MainContainer>
     </>
   );
 }
