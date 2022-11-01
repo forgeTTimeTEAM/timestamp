@@ -34,7 +34,6 @@ footer, header, hgroup, menu, nav, section {
 }
 body, html {
     font-family: "Nunito";
-    width: 100%;
     min-height: 100vh;
 }
 ol, ul {
