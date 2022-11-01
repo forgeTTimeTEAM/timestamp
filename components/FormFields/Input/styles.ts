@@ -39,16 +39,18 @@ const StyledContainer = styled.div<IStyledContainer>`
       ${({ theme, active }) =>
         active
           ? css`
-              color: ${theme.form.bg_input};
+              color: ${theme.form.input_label_color};
               transform: translate(0, calc(-1rem - 33px));
             `
           : css`
               transform: translate(15px, -15px);
             `}
 
-      &:has(+ div > input:focus) {
-        color: ${({ theme }) => theme.form.bg_input};
+      :has(+ div > input:focus) {
+        color: ${({ theme }) => theme.form.input_label_color};
         transform: translate(0, calc(-1rem - 33px));
+        padding-left: 2px;
+        margin-bottom: 3px;
       }
     }
 
@@ -96,7 +98,7 @@ const StyledContainer = styled.div<IStyledContainer>`
 
   .errorContainer {
     color: ${({ theme }) => theme.error};
-    padding-left: 6px;
+    padding: 8px 0 0 6px;
   }
 `;
 

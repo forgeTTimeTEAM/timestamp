@@ -9,21 +9,22 @@ export const light: ITheme = {
   color_logo_left: "#767A89",
   color_logo_right: "#01A5B1",
   font_color_primary: "#000",
-  fill: "#407BFF",
-  fillHeader: "#222",
+  fill: "#3F7CAC",
+  fillHeader: "#222222",
   transparent_gray: "rgba( 0 , 0 , 0  , 0.25) ",
   error: "#D00000",
 
   form: {
     bg_input: "#203D80",
-    container: "#adbcde",
+    container: "#95AFBA",
+    input_label_color: "#131313",
   },
 
   dashboard: {
     deg: "225deg",
-    linear1: "#fff",
-    linear2: "#E5EBF3",
-    linear3: "#F9F5E3",
+    linear1: "#d6e6e8",
+    linear2: "#d7d1d1",
+    linear3: "#bbcfd6 ",
     sprints_card_p_color: "#4D4D4D",
     sprints_card_border: "#212529",
     sprints_card_hover: "#696D7D",
@@ -56,6 +57,7 @@ export const dark: ITheme = {
   form: {
     bg_input: "rgb(31, 45, 97)",
     container: "#0e1a36",
+    input_label_color: "#d3e0f0",
   },
 
   dashboard: {

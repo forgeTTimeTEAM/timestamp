@@ -5,11 +5,13 @@ import {
   useRef,
   useState,
 } from "react";
+
 import { useFormContext } from "react-hook-form";
+
 import { StyledContainer } from "./styles";
 
 interface IInputFields {
-  [k: string]: string;
+  [key: string]: string;
 }
 
 interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -24,6 +26,7 @@ function InputField({ children, name, label, ...inputProps }: IInputProps) {
     watch,
     formState: { errors },
   } = useFormContext<IInputFields>();
+
   const active = !!watch(name) ? true : false;
   const icons = children ? (Array.isArray(children) ? children.length : 1) : 0;
   const fieldError = errors[name];
@@ -37,8 +40,6 @@ function InputField({ children, name, label, ...inputProps }: IInputProps) {
     }
   }, [errorRef]);
 
-  console.log(width);
-
   return (
     <StyledContainer
       withIcon={icons}
@@ -47,13 +48,13 @@ function InputField({ children, name, label, ...inputProps }: IInputProps) {
       hasError={!!errors}
     >
       <div className="inputContainer">
-        {label && <label htmlFor={name}>{label}</label>}
+        {!!label && <label htmlFor={name}>{label}</label>}
         <div>
           <input id={name} type="text" {...inputProps} {...register(name)} />
           {children}
         </div>
       </div>
-      {fieldError && (
+      {!!fieldError && (
         <div className="errorContainer">
           <span ref={errorRef}>{fieldError.message}</span>
         </div>

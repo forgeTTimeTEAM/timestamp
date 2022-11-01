@@ -10,14 +10,13 @@ function SprintContainer() {
       <div className="header">
         <h1>Sprint 1</h1>
       </div>
-      
+
       <ContainerContent>
         <ListDay />
         <VideoMarksContainer />
       </ContainerContent>
-      
     </ContainerMain>
-  )
+  );
 }
 
 export default SprintContainer;
