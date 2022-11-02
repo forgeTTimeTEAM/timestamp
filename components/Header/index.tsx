@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { BiSearch, BiSun } from "react-icons/bi";
+import { SiVercel } from "react-icons/si";
 import { CgMoon } from "react-icons/cg";
 
 import { useUserContext } from "../../Context";
@@ -37,9 +38,17 @@ function Header({ dashboard }: IHeaderProps) {
         />
         <BiSearch />
       </div>
-      <figure>
-        <Image src="/vercel.svg" alt="temporario" layout="fill" />
-      </figure>
+      <a className="vercel" href="https://vercel.com/">
+        <SiVercel />
+      </a>
+      {/* <figure>
+        <Image
+          className="imgVercel"
+          src="/vercel.svg"
+          alt="temporario"
+          layout="fill"
+        />
+      </figure> */}
     </div>
   );
 
