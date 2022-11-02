@@ -64,4 +64,22 @@ body {
     ${({ theme }) => theme.dashboard.linear1}
   );
 }
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #0f2d51;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #0f2d51;
+      border-radius: 20px;
+    }
+}
 `;

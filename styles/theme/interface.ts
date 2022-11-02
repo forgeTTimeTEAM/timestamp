@@ -35,4 +35,20 @@ export interface ITheme {
     video_marker_h4_color: string;
     bg_video_marker: string;
   };
+
+  modalEditVideo: {
+    bg_modal_edit: string;
+    font_color_input: string;
+    font_color_marker: string;
+    bg_input_modal: string;
+    bg_button_save: string;
+    font_color_button_save: string;
+    font_color_input_placeholder: string;
+    font_color_primary_modal: string;
+    font_color_h1: string;
+    font_color_button_modal: string;
+    bg_marker_modal: string;
+    bg_button_modal: string;
+    font_color_icon_clear_url: string;
+  };
 }
