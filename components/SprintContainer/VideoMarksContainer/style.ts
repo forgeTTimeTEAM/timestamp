@@ -12,7 +12,7 @@ const ConainerMarksVideo = styled.div`
     width: 65%;
     height: 100%;
   }
-`
+`;
 
 const AsideMarcks = styled.aside`
   display: flex;
@@ -24,12 +24,13 @@ const AsideMarcks = styled.aside`
 
   h1 {
     border-radius: 5px 5px 0 0;
-    background-color: #0F2D51;
+    background-color: #0f2d51;
     color: white;
     width: 100%;
     text-align: center;
-    font-size: 1.875rem;
+    font-size: 1.5rem;
     font-weight: 700;
+    padding: 5px 0 5px 0;
   }
 
   ul {
@@ -40,6 +41,7 @@ const AsideMarcks = styled.aside`
     background-color: rgba(15, 45, 81, 0.5);
     flex-direction: column;
     padding: 20px 2%;
+    overflow-y: scroll;
 
     li {
       display: flex;
@@ -49,10 +51,13 @@ const AsideMarcks = styled.aside`
       cursor: pointer;
 
       p {
-        color: rgba(35, 42, 67, 0.87);
-        width: 20%;
+        display: flex;
+        width: 30%;
+        font-size: 0.8rem;
+        justify-content: center;
         padding: 10px 5px;
-        background-color: #BCC3D9;
+        background: #555d76;
+        color: #ffffff;
         border-radius: 5px 0 0 5px;
       }
 
@@ -62,12 +67,16 @@ const AsideMarcks = styled.aside`
         display: flex;
         justify-content: center;
         align-items: center;
+        background-color: #bcc3d9;
+        color: #0f2d51;
+      }
+
+      .markOptions {
+        width: 30%;
         border-radius: 0 5px 5px 0;
-        background: #555D76;
-        color: #FFFFFF;
       }
     }
   }
-`
+`;
 
-export { ConainerMarksVideo, AsideMarcks }
+export { ConainerMarksVideo, AsideMarcks };
