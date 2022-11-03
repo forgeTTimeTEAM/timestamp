@@ -11,7 +11,7 @@ function ListDay() {
       <CardDay />
       <CardDay />
     </List>
-  )
+  );
 }
 
-export default ListDay
+export default ListDay;
