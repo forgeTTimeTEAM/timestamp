@@ -4,7 +4,6 @@ import { FaChevronRight } from "react-icons/fa";
 
 import { LiCard, DetailsUl } from "./style";
 
-
 export default function CardDay() {
   const [showDetails, setShowDetails] = useState(false);
 
@@ -17,9 +16,9 @@ export default function CardDay() {
       </LiCard>
       {showDetails && (
         <DetailsUl>
-          <li>Demo</li>
+          <li className="open">Demo</li>
         </DetailsUl>
       )}
     </>
-  )
+  );
 }

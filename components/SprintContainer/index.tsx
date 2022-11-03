@@ -3,8 +3,12 @@ import ListDay from "./ListDay";
 import VideoMarksContainer from "./VideoMarksContainer";
 
 import { ContainerContent, ContainerMain } from "./styles";
+import ModalAddVideo from "../ModalAddVideo";
+import { useContext } from "react";
+import { UserContext } from "../../Context/UserContext";
 
 function SprintContainer() {
+  const { modalEditVideoIsOpen } = useContext(UserContext);
   return (
     <ContainerMain>
       <div className="header">
@@ -14,6 +18,7 @@ function SprintContainer() {
       <ContainerContent>
         <ListDay />
         <VideoMarksContainer />
+        {modalEditVideoIsOpen && <ModalAddVideo />}
       </ContainerContent>
     </ContainerMain>
   );

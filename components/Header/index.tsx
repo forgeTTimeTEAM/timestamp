@@ -1,4 +1,5 @@
 import { BiSearch, BiSun } from "react-icons/bi";
+import { SiVercel } from "react-icons/si";
 import { CgMoon } from "react-icons/cg";
 
 import { useUserContext } from "../../Context";
