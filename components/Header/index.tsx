@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import { BiSearch, BiSun } from "react-icons/bi";
 import { SiVercel } from "react-icons/si";
 import { CgMoon } from "react-icons/cg";
@@ -9,6 +7,7 @@ import { useUserContext } from "../../Context";
 import { IHeaderProps } from "./interface";
 
 import Logo from "../../public/logo.svg";
+import AvatarIcon from "../Avatar";
 import { HeaderContainer } from "./styles";
 
 function Header({ dashboard }: IHeaderProps) {
@@ -38,17 +37,7 @@ function Header({ dashboard }: IHeaderProps) {
         />
         <BiSearch />
       </div>
-      <a className="vercel" href="https://vercel.com/">
-        <SiVercel />
-      </a>
-      {/* <figure>
-        <Image
-          className="imgVercel"
-          src="/vercel.svg"
-          alt="temporario"
-          layout="fill"
-        />
-      </figure> */}
+      <AvatarIcon />
     </div>
   );
 
