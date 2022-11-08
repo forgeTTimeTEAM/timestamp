@@ -21,7 +21,7 @@ function Header({ dashboard }: IHeaderProps) {
   );
 
   const themeButton = (
-    <button className="sideElement" onClick={() => changeTheme()}>
+    <button className="sideElement" onClick={changeTheme}>
       {themeIcon}
     </button>
   );
