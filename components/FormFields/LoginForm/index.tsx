@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-import { useRouter } from "next/router";
-
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FormProvider, useForm } from "react-hook-form";
 import { BiLowVision, BiShowAlt } from "react-icons/bi";
@@ -10,14 +8,12 @@ import InputField from "../Input";
 
 import { StyledLoginForm } from "./styles";
 import { loginFormSchema } from "../../../validator";
-
-export interface ILoginFields {
-  email: string;
-  password: string;
-}
+import { IUserLogin } from "../../../Context/UserContext/interface";
+import { api } from "../../../service/api";
+import { useUserContext } from "../../../Context";
 
 function LoginForm() {
-  const methods = useForm<ILoginFields>({
+  const methods = useForm<IUserLogin>({
     resolver: yupResolver(loginFormSchema),
   });
   const { setFocus } = methods;
@@ -26,6 +22,11 @@ function LoginForm() {
   const passwordType: "text" | "password" = seePass ? "text" : "password";
 
   const passwordIcon = seePass ? <BiShowAlt /> : <BiLowVision />;
+
+  const { loginUser } = useUserContext();
+  const onSubmit = async (data: IUserLogin) => {
+    await loginUser(data);
+  };
 
   return (
     <FormProvider {...methods}>
