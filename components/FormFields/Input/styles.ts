@@ -13,11 +13,14 @@ const StyledContainer = styled.div<IStyledContainer>`
   min-height: calc(
     1rem + 32px
       ${({ hasLabel, hasError }) => {
-        let height = hasLabel ? " + 1rem + 3px" : "";
-        height += hasError ? " + 0.875rem + 3px" : "";
+        let height = hasLabel ? " + 1rem + 6px" : "";
+        height += hasError ? " + 0.875rem + 16px" : "";
         return height;
       }}
   );
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 
   .inputContainer {
     display: flex;
@@ -25,7 +28,7 @@ const StyledContainer = styled.div<IStyledContainer>`
     align-items: flex-end;
 
     min-height: calc(
-      1rem + 32px ${({ hasLabel }) => hasLabel && " + 1rem + 3px"}
+      1rem + 32px ${({ hasLabel }) => hasLabel && " + 1rem + 6px"}
     );
 
     label {
@@ -40,7 +43,7 @@ const StyledContainer = styled.div<IStyledContainer>`
         active
           ? css`
               color: ${theme.form.input_label_color};
-              transform: translate(0, calc(-1rem - 33px));
+              transform: translate(6px, calc(-1rem - 36px));
             `
           : css`
               transform: translate(15px, -15px);
@@ -48,9 +51,7 @@ const StyledContainer = styled.div<IStyledContainer>`
 
       :has(+ div > input:focus) {
         color: ${({ theme }) => theme.form.input_label_color};
-        transform: translate(0, calc(-1rem - 33px));
-        padding-left: 2px;
-        margin-bottom: 3px;
+        transform: translate(6px, calc(-1rem - 36px));
       }
     }
 
@@ -98,7 +99,7 @@ const StyledContainer = styled.div<IStyledContainer>`
 
   .errorContainer {
     color: ${({ theme }) => theme.error};
-    padding: 8px 0 0 6px;
+    padding-left: 6px;
   }
 `;
 

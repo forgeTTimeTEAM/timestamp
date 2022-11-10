@@ -1,15 +1,19 @@
 import { yupResolver } from "@hookform/resolvers/yup";
+import axios, { AxiosError } from "axios";
+import { useRouter } from "next/router";
 import { createContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import { api } from "../../service/api";
 
 import { videosArray } from "../../utils/videosArray";
-import { schemaMarkers } from "../../validator/schemas";
+import { schemaMarkers } from "../../validator";
 
 import {
   IMarkers,
   IUserContext,
   IUserProviderProps,
+  IUsersRequest,
   IVideos,
 } from "./interface";
 
@@ -29,6 +33,8 @@ function UserProvider({ children }: IUserProviderProps) {
   const [searchInputValue, setSearchInputValue] = useState("");
   const [urlValue, setUrlValue] = useState<string>("");
 
+  const router = useRouter();
+
   /* const user = JSON.parse(localStorage.getItem("@time-stamp:user") as any);
   const token = localStorage.getItem("@time-stamp:token");
   const data = new Date(); */
@@ -40,6 +46,48 @@ function UserProvider({ children }: IUserProviderProps) {
 
   const clearUrl = () => {
     setUrlValue("");
+  };
+
+  const toastOptions = {
+    isLoading: false,
+    autoClose: 2000,
+  };
+
+  const createUser = async (data: IUsersRequest) => {
+    const signUpToast = toast.loading("Um momento...");
+    try {
+      await api.post("/users", data);
+      await api.post("/users/login", data);
+      toast.update(signUpToast, {
+        ...toastOptions,
+        render: "Cadastro com sucesso",
+        type: "success",
+      });
+      router.push("/dashboard");
+    } catch (erro) {
+      if (erro instanceof AxiosError) {
+        const { message } = erro.response?.data;
+        let render = message;
+
+        if (message === "Group not found") {
+          render = "Turma inválida";
+        }
+        if (message === "Module not found") {
+          render = "Módulo inválido";
+        }
+        if (message === "Email is already in use") {
+          render = "Email já está em uso";
+        }
+
+        return toast.update(signUpToast, {
+          ...toastOptions,
+          render: render,
+          type: "error",
+        });
+      }
+
+      console.error(erro);
+    }
   };
 
   const searchVideos = () => {
@@ -124,6 +172,7 @@ function UserProvider({ children }: IUserProviderProps) {
     <UserContext.Provider
       value={{
         themeIsDark,
+        createUser,
         changeTheme,
         searchInputValue,
         setSearchInputValue,
