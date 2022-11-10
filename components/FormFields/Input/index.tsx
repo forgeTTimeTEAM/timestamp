@@ -1,4 +1,5 @@
 import {
+  ChangeEventHandler,
   InputHTMLAttributes,
   ReactNode,
   useLayoutEffect,
@@ -20,25 +21,24 @@ interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
 }
 
-function InputField({ children, name, label, ...inputProps }: IInputProps) {
+const InputField = ({ children, name, label, ...inputProps }: IInputProps) => {
   const {
     register,
-    watch,
     formState: { errors },
   } = useFormContext<IInputFields>();
+  const { onChange } = register(name);
+  const [value, SetValue] = useState("");
 
-  const active = !!watch(name) ? true : false;
+  const active = !!value ? true : false;
   const icons = children ? (Array.isArray(children) ? children.length : 1) : 0;
   const fieldError = errors[name];
 
   const errorRef = useRef<HTMLSpanElement>(null);
-  const [width, setWidth] = useState(0);
 
-  useLayoutEffect(() => {
-    if (errorRef.current) {
-      setWidth(errorRef.current.offsetWidth);
-    }
-  }, [errorRef]);
+  const handlerChange: ChangeEventHandler<HTMLInputElement> = (e) => {
+    SetValue(e.target.value);
+    onChange(e);
+  };
 
   return (
     <StyledContainer
@@ -50,7 +50,13 @@ function InputField({ children, name, label, ...inputProps }: IInputProps) {
       <div className="inputContainer">
         {!!label && <label htmlFor={name}>{label}</label>}
         <div>
-          <input id={name} type="text" {...inputProps} {...register(name)} />
+          <input
+            id={name}
+            type="text"
+            {...inputProps}
+            {...register(name)}
+            onChange={handlerChange}
+          />
           {children}
         </div>
       </div>
@@ -61,6 +67,6 @@ function InputField({ children, name, label, ...inputProps }: IInputProps) {
       )}
     </StyledContainer>
   );
-}
+};
 
 export default InputField;

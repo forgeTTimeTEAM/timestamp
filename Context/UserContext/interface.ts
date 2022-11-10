@@ -18,6 +18,7 @@ export interface IUserContext {
   videos: IVideos[];
   searcheredVideos: IVideos[];
   marcadores: IMarkers[];
+  createUser: (data: IUsersRequest) => Promise<void>;
   /*  exemplo: {
     url: string;
     marks: IMarkers[];
@@ -69,4 +70,12 @@ export interface IVideoMarks {
   id: number;
   time_video: string;
   title: string;
+}
+
+export interface IUsersRequest {
+  name: string;
+  email: string;
+  password: string;
+  groupId: string;
+  moduleId: string;
 }
