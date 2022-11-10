@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import LoginForm from "../components/FormFields/LoginForm";
+import SignUpForm from "../components/FormFields/SignUpForm";
 
 import Header from "../components/Header";
 import Intro from "../public/intro.svg";
@@ -18,7 +18,7 @@ const Home: NextPage = () => {
       <section>
         <main>
           <h3>Seja bem vindo(a)!</h3>
-          <LoginForm />
+          <SignUpForm />
         </main>
         <aside>
           <Intro />
