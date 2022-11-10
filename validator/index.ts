@@ -1,12 +1,12 @@
 import * as yup from "yup";
-import { ILoginFields } from "../components/FormFields/LoginForm";
+import { IUserLogin } from "../Context/UserContext/interface";
 
 export const schemaMarkers = yup.object({
   time_video: yup.string().required("Campo obrigatorio"),
   title: yup.string().required("Campo obrigatorio"),
 });
 
-export const loginFormSchema: yup.SchemaOf<ILoginFields> = yup.object().shape({
+export const loginFormSchema: yup.SchemaOf<IUserLogin> = yup.object().shape({
   email: yup
     .string()
     .required("Por favor, preencha o campo email")

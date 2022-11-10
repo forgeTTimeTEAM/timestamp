@@ -12,8 +12,9 @@ import { schemaMarkers } from "../../validator";
 import {
   IMarkers,
   IUserContext,
+  IUserLogin,
   IUserProviderProps,
-  IUsersRequest,
+  IUserRequest,
   IVideos,
 } from "./interface";
 
@@ -53,11 +54,50 @@ function UserProvider({ children }: IUserProviderProps) {
     autoClose: 2000,
   };
 
-  const createUser = async (data: IUsersRequest) => {
+  const loginUser = async (userData: IUserLogin) => {
     const signUpToast = toast.loading("Um momento...");
     try {
-      await api.post("/users", data);
-      await api.post("/users/login", data);
+      const { data } = await api.post("/users/login", userData);
+      const { token } = data;
+      localStorage.setItem("@timestap:token", token);
+
+      toast.update(signUpToast, {
+        ...toastOptions,
+        render: "Login com sucesso",
+        type: "success",
+      });
+      router.push("/dashboard");
+    } catch (erro) {
+      if (erro instanceof AxiosError) {
+        const { message } = erro.response?.data;
+        let render = message;
+
+        if (message === "User not registered.") {
+          render = "Usuário não cadastrado";
+        }
+        if (message === "Wrong email or password.") {
+          render = "Email ou senha inválida";
+        }
+
+        return toast.update(signUpToast, {
+          ...toastOptions,
+          render: render,
+          type: "error",
+        });
+      }
+
+      console.error(erro);
+    }
+  };
+
+  const createUser = async (userData: IUserRequest) => {
+    const signUpToast = toast.loading("Um momento...");
+    try {
+      await api.post("/users", userData);
+      const { data } = await api.post("/users/login", userData);
+      const { token } = data;
+      localStorage.setItem("@timestap:token", token);
+
       toast.update(signUpToast, {
         ...toastOptions,
         render: "Cadastro com sucesso",
@@ -110,8 +150,6 @@ function UserProvider({ children }: IUserProviderProps) {
 
     setSearcheredVideos(searcheredVideos);
   };
-
-  
 
   useEffect(() => {
     !!searchInputValue && searchVideos();
@@ -173,6 +211,7 @@ function UserProvider({ children }: IUserProviderProps) {
       value={{
         themeIsDark,
         createUser,
+        loginUser,
         changeTheme,
         searchInputValue,
         setSearchInputValue,
