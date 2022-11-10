@@ -1,73 +1,40 @@
 export interface ITheme {
   bg_linear_1: string;
   bg_linear_2: string;
-  bg_input: string;
-  bg_header: string;
-  bg_header_form: string;
-  font_color_primary: string;
-  font_color_second: string;
-  fill: string;
-  color_place_holder: string;
-  transparent_gray: string;
-  fillHeader: string;
   bg_button: string;
   color_logo_left: string;
   color_logo_right: string;
+  font_color_primary: string;
+  fill: string;
+  fillHeader: string;
+  transparent_gray: string;
+  error: string;
 
-  card: {
-    background: string;
-    color: string;
-    colorP: string;
-    colorIcon: string;
-    border: string;
+  form: {
+    bg_input: string;
+    container: string;
+    input_label_color: string;
   };
 
   dashboard: {
     deg: string;
     linear1: string;
     linear2: string;
-    scrollbarDeg: string;
-    scrollbar1: string;
-    scrollbar2: string;
-    transparent_gray: string;
+    linear3: string;
+    sprints_card_p_color: string;
+    sprints_card_border: string;
+    sprints_card_hover: string;
   };
 
-  profile: {
-    button_background: string;
-    icon_color: string;
-    dropdown_background: string;
-    font_color: string;
-  };
-
-  containerSprints: {
-    deg: string;
-    linear1: string;
-    linear2: string;
-    background: string;
-    background_secondary: string;
-    background_extra: string;
-    box_shadow: string;
-    font_color_primary: string;
-    font_color_secondary: string;
-    font_color_mark: string;
-    font_color_button: string;
-    color_video: string;
-    colorDivBox: string;
-    scroll_bar: string;
-    color_li_container: string;
-    color_empty_marks: string;
-  };
-
-  inputSearchVideo: {
-    background: string;
-    placeholder: string;
-    icon: string;
-    font_color: string;
-  };
-
-  containerSearchVideo: {
-    title_card: string;
-    background: string;
+  searchVideosContainer: {
+    border_left: string;
+    linear_1: string;
+    linear_2: string;
+    bg_video_thumb: string;
+    video_thumb_border_left: string;
+    video_marker_span_color: string;
+    video_marker_h4_color: string;
+    bg_video_marker: string;
   };
 
   modalEditVideo: {

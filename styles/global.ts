@@ -1,6 +1,11 @@
 import { createGlobalStyle } from "styled-components";
+import { ITheme } from "./theme/interface";
 
-export default createGlobalStyle`
+interface IGlobalProps {
+  theme: ITheme;
+}
+
+export default createGlobalStyle<IGlobalProps>`
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -29,7 +34,6 @@ footer, header, hgroup, menu, nav, section {
 }
 body, html {
     font-family: "Nunito";
-    width: 100%;
     min-height: 100vh;
 }
 ol, ul {
@@ -49,5 +53,32 @@ table {
 }
 button {
     cursor: pointer;
+}
+
+body {
+    background: linear-gradient(
+    ${({ theme }) => theme.dashboard.deg},
+    ${({ theme }) => theme.dashboard.linear3},
+    ${({ theme }) => theme.dashboard.linear2},
+    ${({ theme }) => theme.dashboard.linear1}
+  );
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #0f2d51;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #0f2d51;
+      border-radius: 20px;
+    }
 }
 `;

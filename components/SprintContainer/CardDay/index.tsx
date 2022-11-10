@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { FaChevronRight, FaChevronDown } from "react-icons/fa";
-import { LiCard, DivDetails } from "./style";
 
+import { FaChevronRight } from "react-icons/fa";
+
+import { LiCard, DetailsUl } from "./style";
 
 export default function CardDay() {
   const [showDetails, setShowDetails] = useState(false);
@@ -9,14 +10,15 @@ export default function CardDay() {
   return (
     <>
       <LiCard onClick={() => setShowDetails(!showDetails)}>
-        {showDetails ? <FaChevronDown /> : <FaChevronRight />}
+        {/* {showDetails ? <FaChevronDown /> : <FaChevronRight />} */}
+        <FaChevronRight className={showDetails ? "open" : ""} />
         <p>Segunda-feira</p>
       </LiCard>
       {showDetails && (
-        <DivDetails>
-          <p>Demo</p>
-        </DivDetails>
+        <DetailsUl>
+          <li className="open">Demo</li>
+        </DetailsUl>
       )}
     </>
-  )
+  );
 }

@@ -1,5 +1,6 @@
-import { List } from "./styles";
 import CardDay from "../CardDay";
+
+import { List } from "./styles";
 
 function ListDay() {
   return (
@@ -10,7 +11,7 @@ function ListDay() {
       <CardDay />
       <CardDay />
     </List>
-  )
+  );
 }
 
-export default ListDay
+export default ListDay;

@@ -134,6 +134,16 @@ const HeaderContainer = styled.header<IStyledHeaderProps>`
       top: 50%;
       transform: translateY(-50%);
     }
+
+    .vercel {
+      background-color: transparent;
+      cursor: pointer;
+
+      svg {
+        color: #ffffff;
+        font-size: 1.5rem;
+      }
+    }
   }
 `;
 
